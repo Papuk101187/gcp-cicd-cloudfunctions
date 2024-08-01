@@ -28,5 +28,4 @@ substitutions:
     _FUNCTION_RUNTIME : nodejs20
     _ENTRY_POINT      : helloWorld
 
-options:
-  logging: CLOUD_LOGGING_ONLY
+logs_bucket: gs://myappb0122
