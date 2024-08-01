@@ -1,9 +1,5 @@
-//-----------------------------------------------------------------------------
-// NodeJS App for GCP Cloud Functions deployed via GCP Cloud Build Triggers
-// Copyleft (c) by Denis Astahov
-//-----------------------------------------------------------------------------
+const functions = require('@google-cloud/functions-framework');
 
-exports.helloWorld = (req, res) => {
-  const message="<font color='blue'>СloudFunction of Denis Astahov!</font><br><b>App Version 1.1</b>";
-  res.status(200).send(message);
-};
+functions.http('helloHttp', (req, res) => {
+  res.send(`Hello ${req.query.name || req.body.name || 'World STAG'}!`);
+});
