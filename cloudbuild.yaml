@@ -1,6 +1,3 @@
-# This CloudBuild will be triggered by push to staging branch
-#
-
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args: ['echo', 'Building...']
@@ -31,3 +28,5 @@ substitutions:
     _FUNCTION_RUNTIME : nodejs20
     _ENTRY_POINT      : helloWorld
 
+options:
+  logging: CLOUD_LOGGING_ONLY
